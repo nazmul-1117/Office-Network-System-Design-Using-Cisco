@@ -1,0 +1,144 @@
+SD_Router
+------------------------------------
+router ospf 10
+network 192.168.1.0 0.0.0.31 area 0
+network 11.0.0.0 0.255.255.255 area 0
+end
+
+
+MS_Router
+------------------------------------
+enable
+configure terminal
+
+router ospf 10
+network 192.168.1.32 0.0.0.31 area 0
+network 21.0.0.0 0.255.255.255 area 0
+end
+
+
+CS_Router
+------------------------------------
+enable
+configure terminal
+
+router ospf 10
+network 192.168.1.64 0.0.0.31 area 0
+network 31.0.0.0 0.255.255.255 area 0
+end
+
+
+
+FA_Router
+------------------------------------
+enable
+configure terminal
+
+router ospf 10
+network 192.168.1.96 0.0.0.31 area 0
+network 12.0.0.0 0.255.255.255 area 0
+end
+
+
+
+HR_Router
+------------------------------------
+enable
+configure terminal
+
+router ospf 10
+network 192.168.1.128 0.0.0.31 area 0
+network 22.0.0.0 0.255.255.255 area 0
+end
+
+
+
+Server_Router
+------------------------------------
+enable
+configure terminal
+
+router ospf 10
+network 192.168.1.160 0.0.0.31 area 0
+network 32.0.0.0 0.255.255.255 area 0
+end
+
+---------------------------------------
+
+BB1
+------------------------------------
+enable
+configure terminal
+
+router ospf 10
+network 11.0.0.0 0.255.255.255 area 0
+network 12.0.0.0 0.255.255.255 area 0
+network 100.0.0.0 0.255.255.255 area 0
+
+end
+
+
+BB2
+------------------------------------
+enable
+configure terminal
+
+router ospf 10
+network 21.0.0.0 0.255.255.255 area 0
+network 22.0.0.0 0.255.255.255 area 0
+network 100.0.0.0 0.255.255.255 area 0
+network 101.0.0.0 0.255.255.255 area 0
+
+end
+
+
+
+BB3
+------------------------------------
+enable
+configure terminal
+
+router ospf 10
+network 31.0.0.0 0.255.255.255 area 0
+network 32.0.0.0 0.255.255.255 area 0
+network 101.0.0.0 0.255.255.255 area 0
+network 102.0.0.0 0.255.255.255 area 0
+
+end
+
+
+
+Ext1
+-------------------------------------
+enable
+configure terminal
+
+router ospf 10
+network 103.0.0.0 0.255.255.255 area 0
+network 102.0.0.0 0.255.255.255 area 0
+
+end
+
+
+
+NAT
+--------------------------------------
+enable
+configure terminal
+ip nat inside source static 172.152.1.11 110.0.0.11
+ip nat inside source static 172.152.1.12 110.0.0.12
+ip nat inside source static 172.152.1.13 110.0.0.13
+ip nat inside source static 172.152.1.14 110.0.0.14
+
+-----------------------------------------
+enable
+configure terminal
+
+router ospf 10
+network 103.0.0.0 0.255.255.255 area 0
+network 110.0.0.0 0.255.255.255 area 0
+
+end
+
+
+
